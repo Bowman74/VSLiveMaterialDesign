@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SharedElementHotfix.iml" filepath="$PROJECT_DIR$/SharedElementHotfix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedelementhotfixandroidlib/sharedelementhotfixandroidlib.iml" filepath="$PROJECT_DIR$/sharedelementhotfixandroidlib/sharedelementhotfixandroidlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedelementhotfixlib/sharedelementhotfixlib.iml" filepath="$PROJECT_DIR$/sharedelementhotfixlib/sharedelementhotfixlib.iml" />
+    </modules>
+  </component>
+</project>
