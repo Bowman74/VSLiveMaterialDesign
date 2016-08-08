@@ -18,12 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <ImageView
-            android:id="@+id/animatedImage"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/will_i_am_intel"
-            android:visibility="invisible" />
+            android:layout_height="50dp" />
         <Button
             android:id="@+id/showImage"
             android:layout_width="match_parent"
@@ -34,6 +31,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hide"
+            android:visibility="invisible" />
+        <ImageView
+            android:id="@+id/animatedImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/will_i_am_intel"
             android:visibility="invisible" />
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

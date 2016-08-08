@@ -12,9 +12,9 @@ namespace MaterialDesign
         Theme = "@style/Theme.MyTheme")]
     public class NewPollActivity : AppCompatActivity
     {
-        Button ShowButton;
-        Button HideButton;
-        ImageView Image;
+        private Button ShowButton;
+        private Button HideButton;
+        private ImageView Image;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
