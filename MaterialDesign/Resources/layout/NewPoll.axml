@@ -21,6 +21,10 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="50dp" />
+       <EditText
+            android:id="@+id/selectText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/showImage"
             android:layout_width="match_parent"
