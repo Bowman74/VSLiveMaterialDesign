@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:id="@+id/poll_list"
         android:layout_below="@id/toolbar"
-        app:theme="@style/Theme.AppCompat.Light" />
+        android:theme="@style/Theme.AppCompat.Light" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
@@ -26,6 +26,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
+        android:visibility="invisible"
         android:enabled="true"
         android:transitionName="@string/Transition_Popup"
         android:src="@drawable/ic_add_white_24dp" />

@@ -3138,6 +3138,9 @@ namespace MaterialDesign
 			// aapt resource value: 0x7f08015a
 			public const int CardView_Light = 2131231066;
 			
+			// aapt resource value: 0x7f08015d
+			public const int MyTheme_Base = 2131231069;
+			
 			// aapt resource value: 0x7f080017
 			public const int Platform_AppCompat = 2131230743;
 			

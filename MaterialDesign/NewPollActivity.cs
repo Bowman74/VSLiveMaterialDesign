@@ -65,29 +65,43 @@ namespace MaterialDesign
 
         private void AnimateShow(View view)
         {
-            var centerX = view.Width / 2;
-            var centerY = view.Height / 2;
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+            {
+                var centerX = view.Width / 2;
+                var centerY = view.Height / 2;
 
-            var radius = Hypotenuse(centerY, centerY);
+                var radius = Hypotenuse(centerY, centerY);
 
-            var animator = ViewAnimationUtils.CreateCircularReveal(view, centerX, centerY, 0, radius);
+                var animator = ViewAnimationUtils.CreateCircularReveal(view, centerX, centerY, 0, radius);
 
-            view.Visibility = ViewStates.Visible;
-            animator.Start();
+                view.Visibility = ViewStates.Visible;
+                animator.Start();
+            }
+            else
+            {
+                view.Visibility = ViewStates.Visible;
+            }
         }
 
         private void AnimateHide(View view)
         {
-            var centerX = view.Width / 2;
-            var centerY = view.Height / 2;
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+            {
+                var centerX = view.Width / 2;
+                var centerY = view.Height / 2;
 
-            var radius = Hypotenuse(centerY, centerY);
+                var radius = Hypotenuse(centerY, centerY);
 
-            var animator = ViewAnimationUtils.CreateCircularReveal(view, centerX, centerY, radius, 0);
-            animator.AddListener(new Adapter(view));
+                var animator = ViewAnimationUtils.CreateCircularReveal(view, centerX, centerY, radius, 0);
+                animator.AddListener(new Adapter(view));
 
-            view.Visibility = ViewStates.Visible;
-            animator.Start();
+                view.Visibility = ViewStates.Visible;
+                animator.Start();
+            }
+            else
+            {
+                view.Visibility = ViewStates.Invisible;
+            }
         }
 
         private float Hypotenuse(int x, int y)

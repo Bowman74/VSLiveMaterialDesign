@@ -8,7 +8,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
-        android:title="Some Menu Item"
+        android:title="Toggle Day Night"
         android:orderInCategory="300"
         app:showAsAction="never" />
 </menu>
