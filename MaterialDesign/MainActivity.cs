@@ -4,10 +4,12 @@ using Android.Content;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.App;
+using Android.Support.V4.Content;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Views.Animations;
+using Com.Magenic.Sharedelementhotfix.Sharedelementhotfixandroidlib;
 //using Com.Magenic.Sharedelementhotfix.Sharedelementhotfixandroidlib;
 using MaterialDesign.Adapters;
 using MaterialDesign.Services;
@@ -15,13 +17,14 @@ using MaterialDesign.Services;
 
 namespace MaterialDesign
 {
-    [Activity(Label = "MyVote Polls", 
-        MainLauncher = true, 
-        Theme = "@style/Theme.MyTheme", 
+    [Activity(Label = "MyVote Polls",
+        MainLauncher = true,
+        Theme = "@style/Theme.MyTheme",
         Icon = "@drawable/icon")]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : AppCompatActivity, RecyclerView.IOnItemTouchListener, View.IOnClickListener
     {
         private static int NightMode = AppCompatDelegate.ModeNightNo;
+        GestureDetector gestureDetector;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -38,19 +41,28 @@ namespace MaterialDesign
             // Get our button from the layout resource,
             // and attach an event to it
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab_add);
-            fab.Visibility = ViewStates.Invisible;
             fab.Click += fab_click;
             var recyclerView = FindViewById<RecyclerView>(Resource.Id.poll_list);
 
             var layoutManager = new LinearLayoutManager(this);
-            layoutManager.Orientation = LinearLayoutManager.Vertical; 
+            layoutManager.Orientation = LinearLayoutManager.Vertical;
             recyclerView.SetLayoutManager(layoutManager);
+            recyclerView.AddOnItemTouchListener(this);
 
             var pollService = new PollService();
             var pollItems = pollService.GetPolls();
 
             var adapter = new PollAdapter(pollItems);
             recyclerView.SetAdapter(adapter);
+
+            var listener = new GestureListener();
+            gestureDetector = new GestureDetector(this, listener);
+
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+            {
+                Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+                Window.SetStatusBarColor(new Android.Graphics.Color(ContextCompat.GetColor(Application, Resource.Color.custom_secondary)));
+            }
         }
 
         protected override void OnResume()
@@ -70,11 +82,11 @@ namespace MaterialDesign
             var transitionName = GetString(Resource.String.Transition_Popup);
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab_add);
 
-            //var sharedElement = new SharedElementHotfix();
-            //var bundle = sharedElement.SharedElementBundle(this, fab, transitionName);
-            var options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, fab, transitionName);
-            var bundle = options.ToBundle();
-            ActivityCompat.StartActivity(this, intent, bundle);
+            var sharedElement = new SharedElementHotfix();
+            var bundle = sharedElement.SharedElementBundle(this, fab, transitionName);
+            //var options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, fab, transitionName);
+            //var bundle = options.ToBundle();
+            Android.Support.V4.Content.ContextCompat.StartActivity(this, intent, bundle);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -119,6 +131,43 @@ namespace MaterialDesign
         private float Hypotenuse(int x, int y)
         {
             return (float)Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+        }
+
+        public bool OnInterceptTouchEvent(RecyclerView recyclerView, MotionEvent @event)
+        {
+            var child = recyclerView.FindChildViewUnder(@event.GetX(), @event.GetY());
+
+            if (child != null && gestureDetector.OnTouchEvent(@event))
+            {
+                var layout = FindViewById<CoordinatorLayout>(Resource.Id.coordinator_layout);
+
+                var snackbar = Snackbar.Make(layout, Resource.String.Item_Clicked, Snackbar.LengthLong);
+                snackbar.SetAction("Do Something", this);
+                snackbar.Show();
+
+                return true;
+            }
+            return false;
+        }
+
+        public void OnRequestDisallowInterceptTouchEvent(bool disallow)
+        {
+        }
+
+        public void OnTouchEvent(RecyclerView recyclerView, MotionEvent @event)
+        {
+        }
+
+        public void OnClick(View v)
+        {
+        }
+    }
+
+    public class GestureListener : GestureDetector.SimpleOnGestureListener
+    {
+        public override bool OnSingleTapUp(MotionEvent e)
+        {
+            return true;
         }
     }
 }

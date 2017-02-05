@@ -3,4 +3,5 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">MaterialDesign</string>
     <string name="Transition_Popup">Transition_Popup</string>
+	<string name="Item_Clicked">Item clicked</string>
 </resources>
