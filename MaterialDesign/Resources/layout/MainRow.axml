@@ -9,8 +9,7 @@
         android:layout_width="0dp"
         app:layout_aspectRatio="100%"
         app:layout_widthPercent="100%"
-        app:cardElevation="2sp"
-        app:cardUseCompatPadding="true">
+        style="?attr/cardStyle">
         <RelativeLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent">

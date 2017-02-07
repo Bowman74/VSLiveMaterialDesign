@@ -10,7 +10,6 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Views.Animations;
 using Com.Magenic.Sharedelementhotfix.Sharedelementhotfixandroidlib;
-//using Com.Magenic.Sharedelementhotfix.Sharedelementhotfixandroidlib;
 using MaterialDesign.Adapters;
 using MaterialDesign.Services;
 
@@ -69,11 +68,7 @@ namespace MaterialDesign
         {
             base.OnResume();
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab_add);
-            if (fab.Visibility == ViewStates.Invisible)
-            {
-                AnimateShow(fab);
-            }
-
+            AnimateShow(fab);
         }
 
         private void fab_click(object sender, EventArgs e)
@@ -139,9 +134,8 @@ namespace MaterialDesign
 
             if (child != null && gestureDetector.OnTouchEvent(@event))
             {
-                var layout = FindViewById<CoordinatorLayout>(Resource.Id.coordinator_layout);
-
-                var snackbar = Snackbar.Make(layout, Resource.String.Item_Clicked, Snackbar.LengthLong);
+                var fab = FindViewById<FloatingActionButton>(Resource.Id.fab_add);
+                var snackbar = Snackbar.Make(fab, Resource.String.Item_Clicked, Snackbar.LengthLong);
                 snackbar.SetAction("Do Something", this);
                 snackbar.Show();
 

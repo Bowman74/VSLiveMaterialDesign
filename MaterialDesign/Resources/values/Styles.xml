@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
+	<attr format="reference" name="cardStyle"/>
+	
     <style name="Theme.MyTheme" parent="MyTheme.Base" >
 
     </style>
 
-    <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="ToolbarTheme" parent="Theme.AppCompat">
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
     </style>
 
 	<style name="MyTheme.Base" parent="Theme.AppCompat.DayNight">
@@ -16,5 +20,13 @@
 	    <item name="colorPrimary">@color/custom_primary</item>
         <item name="colorPrimaryDark">@color/custom_secondary</item>
         <item name="colorAccent">@color/custom_accent</item>
+		<item name="cardStyle">@style/PrimaryCardView</item>
+    </style>
+
+	<style name="PrimaryCardView" parent="CardView">
+        <item name="android:layout_margin">5dp</item>
+		<item name="cardUseCompatPadding">true</item>
+		<item name="cardElevation">4sp</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
 </resources>

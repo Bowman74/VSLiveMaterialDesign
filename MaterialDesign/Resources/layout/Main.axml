@@ -29,7 +29,6 @@
             android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
             android:layout_gravity="bottom|right"
-            android:visibility="invisible"
             android:enabled="true"
             android:transitionName="@string/Transition_Popup"
             android:src="@drawable/ic_add_white_24dp" />

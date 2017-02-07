@@ -330,6 +330,9 @@ namespace MaterialDesign
 			// aapt resource value: 0x7f01000f
 			public const int cardPreventCornerOverlap = 2130771983;
 			
+			// aapt resource value: 0x7f01014f
+			public const int cardStyle = 2130772303;
+			
 			// aapt resource value: 0x7f01000e
 			public const int cardUseCompatPadding = 2130771982;
 			
@@ -3708,6 +3711,9 @@ namespace MaterialDesign
 			
 			// aapt resource value: 0x7f060041
 			public const int Platform_Widget_AppCompat_Spinner = 2131099713;
+			
+			// aapt resource value: 0x7f060181
+			public const int PrimaryCardView = 2131100033;
 			
 			// aapt resource value: 0x7f060050
 			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131099728;
