@@ -11,4 +11,9 @@
         android:title="Toggle Day Night"
         android:orderInCategory="300"
         app:showAsAction="never" />
+	<item
+        android:id="@+id/bottom_navigation"
+        android:title="Bottom Navigation"
+        android:orderInCategory="400"
+        app:showAsAction="never" />
 </menu>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fragment_1"
+        android:enabled="true"
+        android:icon="@drawable/ic_alarm_white_24dp"
+        android:title="Alarm"
+        app:showAsAction="ifRoom" />
+	<item
+        android:id="@+id/fragment_2"
+        android:enabled="true"
+        android:icon="@drawable/ic_security_black_24dp"
+        android:title="Security"
+        app:showAsAction="ifRoom" />
+	<item
+        android:id="@+id/fragment_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_message_black_24dp"
+        android:title="Message"
+        app:showAsAction="ifRoom" />
+</menu>

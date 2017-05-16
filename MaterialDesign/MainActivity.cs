@@ -107,6 +107,10 @@ namespace MaterialDesign
                 }
                 this.Recreate();
             }
+            if (item.ItemId == Resource.Id.bottom_navigation)
+            {
+                Android.Support.V4.Content.ContextCompat.StartActivity(this, new Intent(this, typeof(BottomNavigationActivity)), null);
+            }
             return base.OnOptionsItemSelected(item);
         }
 
