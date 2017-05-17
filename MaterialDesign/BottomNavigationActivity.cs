@@ -43,6 +43,7 @@ namespace MaterialDesign
 
             viewPager = FindViewById<ViewPager>(Resource.Id.pager);
             viewPager.Adapter = new BottomNavigationAdapter(base.SupportFragmentManager, fragments);
+            viewPager.SetPageTransformer(false, new FadePageTransformer());
 
             bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             bottomNavigation.SetOnNavigationItemSelectedListener(this);

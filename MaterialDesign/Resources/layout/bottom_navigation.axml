@@ -12,7 +12,7 @@
         android:background="@color/custom_primary"
         app:navigationIcon="@drawable/ic_menu_white_24dp"
         android:theme="@style/ToolbarTheme" />
-    <android.support.v4.view.ViewPager
+    <MaterialDesign.Views.NoSwipeViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +22,7 @@
         app:menu="@menu/bottom_navigation_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/custom_primary"
+        app:itemBackground="@color/lt_grey"
         app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemTextColor="@drawable/bottom_navigation_selector" />
 </LinearLayout>

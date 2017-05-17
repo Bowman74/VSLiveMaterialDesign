@@ -114,6 +114,8 @@
     <Compile Include="Fragments\AlarmFragment.cs" />
     <Compile Include="Fragments\SecurityFragment.cs" />
     <Compile Include="Fragments\MessageFragment.cs" />
+    <Compile Include="Views\NoSwipeViewPager.cs" />
+    <Compile Include="Adapters\PageTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />

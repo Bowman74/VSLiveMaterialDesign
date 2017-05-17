@@ -77,10 +77,10 @@ namespace MaterialDesign
             var transitionName = GetString(Resource.String.Transition_Popup);
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab_add);
 
-            var sharedElement = new SharedElementHotfix();
-            var bundle = sharedElement.SharedElementBundle(this, fab, transitionName);
-            //var options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, fab, transitionName);
-            //var bundle = options.ToBundle();
+            //var sharedElement = new SharedElementHotfix();
+            //var bundle = sharedElement.SharedElementBundle(this, fab, transitionName);
+            var options = ActivityOptionsCompat.MakeSceneTransitionAnimation(this, fab, transitionName);
+            var bundle = options.ToBundle();
             Android.Support.V4.Content.ContextCompat.StartActivity(this, intent, bundle);
         }
 

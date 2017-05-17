@@ -4,4 +4,5 @@
     <item name="custom_secondary" type="color">#FF585966</item>
     <item name="custom_accent" type="color">#FFFE7D32</item>
     <item name="custom_transparent_secondary" type="color">#EE585966</item>
+	<item name="lt_grey" type="color">#FFD3D3D3</item>
 </resources>
